@@ -10,6 +10,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@drizzle/react-components": "^1.5.3",
+    "@drizzle/react-plugin": "^1.5.3",
+    "@drizzle/store": "^1.5.3",
     "@rainbow-me/rainbowkit": "^2.2.11",
     "ethers": "6",
     "next": "^16.1.3",

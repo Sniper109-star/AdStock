@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { drizzle } from '@drizzle/store';
+import { Drizzle } from '@drizzle/store';
 
 // Initialize Drizzle with blockchain connection
 const options = {
@@ -10,12 +10,14 @@ const options = {
   }
 };
 
-const drizzleInstance = new drizzle(options);
+const DrizzleInstance = new Drizzle(options);
 
-export async function GET(req) {
+import type { NextRequest } from 'next/server';
+
+export async function GET(req: NextRequest) {
   try {
     // Example blockchain query
-    const result = await drizzleInstance.query('yourContractMethod');
+    const result = await DrizzleInstance.query('yourContractMethod');
     return NextResponse.json(result);
   } catch (error) {
     return NextResponse.json({ error: 'Blockchain request failed' }, { status: 500 });
